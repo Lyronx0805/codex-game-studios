@@ -1,0 +1,3 @@
+display_name: Game Studio Solo
+short_description: Fast solo-dev game workflow for prototypes and small projects.
+default_prompt: Use $game-studio-solo to make focused progress on this game.
