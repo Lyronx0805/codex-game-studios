@@ -2,8 +2,8 @@
 
 Reference label: `CODEX-ADAPTATION`
 
-Codex Game Studios is a Codex skill pack for structuring game development work
-around scalable studio dimensions.
+Codex Game Studios is a Codex skill package for structuring AI-assisted game
+development work around scalable studio dimensions.
 
 ## Package Goals
 
