@@ -35,7 +35,9 @@ Operating style:
 - align design and architecture before broad implementation;
 - use story readiness and story-done checks;
 - record risks, dependencies, owners, and acceptance criteria;
-- run department reviews at important handoffs.
+- propose two to four subagent or worktree tracks when the environment supports
+  delegation and the work can be split cleanly;
+- run department reviews at important handoffs;
 - turn review findings into clear actions, owners, and next checks.
 
 Common outputs:
