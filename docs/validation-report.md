@@ -2,8 +2,8 @@
 
 Reference label: `CODEX-ADAPTATION`
 
-Last validation: 2026-08-20 00:14 EDT, before publishing the hybrid execution
-update.
+Last validation: 2026-08-20 00:27 EDT, against a fresh public clone after
+publishing the hybrid execution update.
 
 ## Checks Performed
 
