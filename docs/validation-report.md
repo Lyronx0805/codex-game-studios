@@ -2,8 +2,8 @@
 
 Reference label: `CODEX-ADAPTATION`
 
-Last validation: 2026-08-19 23:51 EDT, against a fresh public clone after
-publishing.
+Last validation: 2026-08-20 00:14 EDT, before publishing the hybrid execution
+update.
 
 ## Checks Performed
 
@@ -31,9 +31,11 @@ find . -name .DS_Store -print
 | `agents/openai.yaml` metadata exists | Pass |
 | Main skill references resolve | Pass |
 | Required reference files exist | Pass |
+| Hybrid execution reference exists | Pass |
 | Required docs exist | Pass |
 | README includes `Created by Codex` notice | Pass |
 | README includes `UPSTREAM-CCGS`, `CODEX-ADAPTATION`, `AI-GENERATED` labels | Pass |
+| README describes optional multi-agent execution | Pass |
 | No `.DS_Store` files outside `.git` | Pass |
 | No non-ASCII text detected | Pass |
 | No known awkward positioning phrase or typo detected | Pass |
@@ -47,7 +49,7 @@ The skill pack was reviewed for these functional behaviors:
 - each preset skill has a clear use case and role-lens behavior;
 - the main skill routes to references only when needed;
 - references cover dimensions, roles, workflows, upstream command mapping,
-  interaction patterns, artifacts, and quality gates;
+  interaction patterns, artifacts, quality gates, and hybrid execution;
 - usage docs explain how users invoke the skills in Codex;
 - publisher-facing docs identify the upstream reference and Codex-created
   adaptation status.
