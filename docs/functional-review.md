@@ -14,7 +14,8 @@ whether the files are valid.
 | Skill discovery | Good | Each skill has clear frontmatter and UI metadata. |
 | Main router | Good | `game-studio` tells Codex how to inspect a project, choose a dimension, route workflows, and load references progressively. |
 | Dimension presets | Good | Each preset now works as a standalone entry point with a first move, role lenses, operating style, common outputs, and useful paths. |
-| Reference routing | Good | Main skill labels when to read dimensions, roles, workflows, workflow map, artifacts, quality gates, and interaction patterns. |
+| Reference routing | Good | Main skill labels when to read dimensions, roles, workflows, workflow map, artifacts, quality gates, interaction patterns, and hybrid execution rules. |
+| Hybrid execution | Good | Role lenses remain the portable default, while indie, mid-size, and full modes can propose real subagents, parallel tasks, or worktrees when available and useful. |
 | GitHub readiness | Good | Includes README, license, notice, usage docs, specification, validation script, and GitHub Actions workflow. |
 | Upstream labeling | Good | Uses `UPSTREAM-CCGS`, `CODEX-ADAPTATION`, and `AI-GENERATED` labels. |
 
@@ -38,6 +39,9 @@ larger projects to request thorough reviews.
 This selectable size is the main user-facing advantage: the same skill pack can
 support rapid prototyping, normal indie development, team coordination, and
 release readiness without forcing every project into the same amount of process.
+The hybrid execution model extends that advantage: small work stays with one
+Codex agent applying role lenses, while larger work can split into independent
+tracks when the Codex environment supports delegation.
 
 ## User-Friendliness
 
@@ -49,6 +53,8 @@ Improvements made during review:
 - Strengthened each preset so it gives a clear first action.
 - Added common outputs for each preset so users can predict what they will get.
 - Added reminders to keep visible answers short and actionable.
+- Added hybrid execution rules so subagents are optional, scoped, and tied to
+  the selected studio dimension.
 
 ## Realistic Limits
 
@@ -56,6 +62,8 @@ Improvements made during review:
   testing, store certification, or human review.
 - Preset skills are intentionally lighter than the main configurable skill. For
   deeper routing, install `game-studio` along with the chosen preset.
+- Multi-agent execution depends on the Codex environment. When safe delegation
+  tools are unavailable, the skill falls back to role lenses.
 - The validator checks package structure and required docs. It does not prove
   every game-dev recommendation will be correct.
 
@@ -65,4 +73,5 @@ Verdict: `PASS WITH KNOWN LIMITS`
 
 The skill pack is functional, understandable, and ready for GitHub publication.
 It has the right structure for Codex skills, a clear dimension-selection feature,
-and public-facing notices that identify the Codex-created adaptation.
+an optional multi-agent execution model, and public-facing notices that identify
+the Codex-created adaptation.
