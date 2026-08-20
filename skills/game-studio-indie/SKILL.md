@@ -32,7 +32,9 @@ Operating style:
 - use ADRs for important technical choices;
 - break multi-file work into epics or stories;
 - run focused design, architecture, code, and QA gates;
-- end with the next production step.
+- use role lenses by default, with one optional review or QA subagent when the
+  environment supports it and the task is risky enough;
+- end with the next production step;
 - keep explanations concise and define terms like GDD or ADR when needed.
 
 Common outputs:
