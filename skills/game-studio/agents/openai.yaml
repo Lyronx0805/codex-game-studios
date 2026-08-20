@@ -1,3 +1,3 @@
 display_name: Game Studio
-short_description: Coordinate game projects with scalable studio roles and quality gates.
+short_description: Coordinate game projects with scalable roles, gates, and optional delegation.
 default_prompt: Use $game-studio to plan, build, review, or ship this game project.
