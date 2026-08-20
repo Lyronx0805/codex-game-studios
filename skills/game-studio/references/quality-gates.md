@@ -73,6 +73,21 @@ Ask:
 - Are telemetry, privacy, accessibility, localization, and support impacts
   considered when relevant?
 
+## Multi-Agent Coordination Gate
+
+Use this gate before delegating to real subagents, parallel tasks, or worktrees.
+
+Ask:
+
+- Is the work large or risky enough to justify coordination overhead?
+- Does each agent or task track have a clear objective and output format?
+- Are write boundaries and likely touched files clear?
+- Is there a merge or synthesis plan?
+- Is the final coordinating agent responsible for verification?
+
+Block delegation when the work cannot be split cleanly or when the environment
+does not expose safe delegation tools. Fall back to role lenses in that case.
+
 ## Verdicts
 
 Use simple verdicts:
@@ -81,4 +96,3 @@ Use simple verdicts:
 - `PASS WITH RISKS`: proceed if the user accepts named risks.
 - `NEEDS WORK`: fix before proceeding.
 - `BLOCKED`: missing information or dependency prevents honest progress.
-
