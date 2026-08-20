@@ -115,6 +115,7 @@ def validate_references() -> None:
         "workflow-map.md",
         "artifacts.md",
         "quality-gates.md",
+        "multi-agent-mode.md",
     }
     actual_refs = {p.name for p in (main / "references").glob("*.md")}
     missing = required_refs - actual_refs
@@ -140,7 +141,13 @@ def validate_docs() -> None:
             fail(f"missing {rel}")
 
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    for phrase in ("Created by Codex", "UPSTREAM-CCGS", "CODEX-ADAPTATION", "AI-GENERATED"):
+    for phrase in (
+        "Created by Codex",
+        "UPSTREAM-CCGS",
+        "CODEX-ADAPTATION",
+        "AI-GENERATED",
+        "optional multi-agent",
+    ):
         if phrase not in readme:
             fail(f"README missing required phrase: {phrase}")
 
