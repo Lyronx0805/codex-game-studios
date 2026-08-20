@@ -13,7 +13,7 @@ codex-game-studios
 Description:
 
 ```text
-Codex-created skill package for vibe-coding game developers, adapting the MIT-licensed Claude Code Game Studios workflow into scalable Codex studio dimensions.
+Codex-created skill package for vibe-coding game developers, adapting the MIT-licensed Claude Code Game Studios workflow into selectable Codex studio dimensions with optional multi-agent coordination.
 ```
 
 Topics:
