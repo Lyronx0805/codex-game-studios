@@ -108,5 +108,7 @@ to run Claude commands unless they are actually using Claude Code.
 
 For team workflows such as combat, UI, audio, level, narrative, live-ops, QA,
 polish, or release, choose the matching role lenses from `roles.md`, use the
-selected dimension to decide review weight, and coordinate the work in phases:
-design, architecture, implementation, integration, validation, and sign-off.
+selected dimension to decide review weight, and read `multi-agent-mode.md` when
+real Codex subagents, parallel tasks, or worktrees are available. Coordinate the
+work in phases: design, architecture, implementation, integration, validation,
+and sign-off.
