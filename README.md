@@ -9,11 +9,12 @@ an AI-assisted adaptation. It is provided as-is under the MIT License. The
 publisher distributes the package but does not warrant game outcomes, legal
 fitness, upstream compatibility, or dispute-free use.
 
-This project adapts the studio-hierarchy idea from
+This project adapts the studio-hierarchy and quality-gate idea from
 [Claude Code Game Studios](https://github.com/donchitos/claude-code-game-studios)
 for Codex skills. Instead of Claude slash commands, Claude subagent files, and
 Claude hooks, this pack uses Codex-native skill instructions, progressive
-references, and selectable studio dimensions.
+references, selectable studio dimensions, role lenses, and optional multi-agent
+execution when the Codex environment supports it.
 
 ## Reference Labels
 
@@ -37,12 +38,12 @@ references, and selectable studio dimensions.
 
 The main improvement over a one-size studio is selectable process depth.
 
-| Dimension | Role Lenses | Review Weight | Artifact Weight |
-| --- | ---: | --- | --- |
-| Solo | 3 | Lightweight | Minimal checklists and notes |
-| Indie | 6 | Balanced | Design docs, ADRs, sprint/story notes |
-| Mid-size | 12 | Structured | Department reviews and quality gates |
-| Full | 25+ | Thorough | Full studio pipeline, director sign-offs, release gates |
+| Dimension | Role Lenses | Execution Model | Review Weight | Artifact Weight |
+| --- | ---: | --- | --- | --- |
+| Solo | 3 | Single-agent role lenses | Lightweight | Minimal checklists and notes |
+| Indie | 6 | Role lenses, optional reviewer | Balanced | Design docs, ADRs, sprint/story notes |
+| Mid-size | 12 | Optional multi-agent tracks | Structured | Department reviews and quality gates |
+| Full | 25+ | Multi-agent recommended when available | Thorough | Full studio pipeline, director sign-offs, release gates |
 
 ## Why This Skill Is Useful
 
@@ -54,13 +55,18 @@ Codex Game Studios solves that by making studio size selectable:
 
 - solo mode supports rapid work on prototypes, school projects, and game jams;
 - indie mode adds structure for small-team production;
-- mid-size mode introduces department-style handoffs for complex games;
+- mid-size mode introduces department-style handoffs and optional multi-agent
+  tracks for complex games;
 - full mode adds director gates, specialist checks, release planning, security,
-  accessibility, localization, and live-ops review when the stakes are higher.
+  accessibility, localization, live-ops review, and multi-agent coordination
+  when the stakes are higher.
 
 The operational advantage is control over workflow scale. A project can receive
 the appropriate amount of planning, documentation, implementation guidance, and
-QA without being forced into one fixed process.
+QA without being forced into one fixed process. Small tasks stay with one Codex
+agent applying role lenses; larger tasks can split into separate Codex tasks or
+subagents, optionally using isolated worktrees when that capability is
+available.
 
 ## Specification
 
@@ -72,6 +78,8 @@ Short version:
 - `skills/game-studio-*/` are preset entry points for specific studio sizes.
 - `skills/game-studio/references/` contains the detailed playbook loaded only
   when needed.
+- `skills/game-studio/references/multi-agent-mode.md` defines when to stay with
+  role lenses and when to propose real subagent or worktree delegation.
 - `tools/validate_skill_pack.py` checks skill names, frontmatter, references,
   UI metadata, and README links without third-party Python packages.
 
@@ -118,6 +126,8 @@ changing the implementation:
 
 - studio roles become "role lenses" Codex can apply during planning, reviews,
   implementation, and QA;
+- multi-agent execution becomes optional and environment-dependent rather than
+  required for basic use;
 - slash commands become named workflow modes inside the skill references;
 - Claude hooks become manual quality gates and checklists;
 - review intensity scales with the selected studio dimension.
