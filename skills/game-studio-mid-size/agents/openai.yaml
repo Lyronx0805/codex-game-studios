@@ -1,0 +1,4 @@
+display_name: Game Studio Mid-Size
+short_description: Department-style workflow for complex game projects.
+default_prompt: Use $game-studio-mid-size to coordinate this game project.
+
