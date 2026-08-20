@@ -1,7 +1,20 @@
 # Role Lenses
 
-Use roles as thinking lenses. You do not need to announce every role every time;
-name them when it helps the user understand the recommendation.
+Use roles as thinking lenses. Announce only the roles that help explain the
+recommendation.
+
+## Role Lens Or Real Agent
+
+A role lens is a viewpoint used by the current Codex agent. It is the default
+because it is fast, portable, and works without special tooling.
+
+A real agent is a separate Codex task or subagent, optionally using an isolated
+worktree when the current environment supports it. Use real agents only when a
+task is large enough to benefit from independent work or review. Keep one
+coordinating agent responsible for merging conclusions and verifying the final
+result.
+
+For detailed delegation rules, use `multi-agent-mode.md`.
 
 ## Leadership
 
@@ -69,4 +82,3 @@ When roles disagree, surface the real trade-off:
 3. explain impact on fun, scope, tech risk, schedule, and quality;
 4. recommend one option;
 5. let the user decide before changing direction.
-
