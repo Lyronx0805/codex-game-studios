@@ -2,7 +2,8 @@
 
 Reference label: `CODEX-ADAPTATION`
 
-Last local validation: 2026-08-19, America/Toronto.
+Last validation: 2026-08-19 23:51 EDT, against a fresh public clone after
+publishing.
 
 ## Checks Performed
 
@@ -10,9 +11,10 @@ The repository was checked with:
 
 ```bash
 python3 tools/validate_skill_pack.py
-LC_ALL=C rg -n "[^[:ascii:]]" .
+python3 -m py_compile tools/validate_skill_pack.py
+LC_ALL=C rg -n "[^[:ascii:]]" . || true
 find . -name .DS_Store -print
-git status --ignored --short
+# Professional wording scan for deprecated positioning phrases and typos.
 ```
 
 ## Results
@@ -25,6 +27,7 @@ git status --ignored --short
 | Skill names use lowercase hyphen-case | Pass |
 | Required frontmatter fields exist | Pass |
 | Unexpected frontmatter keys absent | Pass |
+| Duplicate top-level frontmatter and UI metadata keys absent | Pass |
 | `agents/openai.yaml` metadata exists | Pass |
 | Main skill references resolve | Pass |
 | Required reference files exist | Pass |
@@ -33,6 +36,7 @@ git status --ignored --short
 | README includes `UPSTREAM-CCGS`, `CODEX-ADAPTATION`, `AI-GENERATED` labels | Pass |
 | No `.DS_Store` files outside `.git` | Pass |
 | No non-ASCII text detected | Pass |
+| No known awkward positioning phrase or typo detected | Pass |
 
 ## Functional Review
 
