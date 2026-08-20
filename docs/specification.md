@@ -13,13 +13,17 @@ development work around scalable studio dimensions.
   Claude agent configuration.
 - Let users select a studio dimension so small projects stay light and larger
   projects get stronger review coverage.
+- Support a hybrid execution model: role lenses by default, with optional
+  subagent, parallel-task, or worktree delegation when the environment supports
+  it and the selected dimension justifies the coordination overhead.
 
 ## Core Advantage
 
 The central advantage is selectable studio size. Users are not locked into one
 workflow. A beginner can ask for a solo prototype workflow with minimal process,
 while a larger or higher-risk project can ask for mid-size or full-studio review
-with more roles, stronger gates, and more complete production evidence.
+with more roles, stronger gates, optional multi-agent coordination, and more
+complete production evidence.
 
 ## Skill Inventory
 
@@ -33,12 +37,28 @@ with more roles, stronger gates, and more complete production evidence.
 
 ## Dimension Behavior
 
-| Dimension | Role Lenses | Review Weight | Expected Behavior |
-| --- | ---: | --- | --- |
-| Solo | 3 | Light | Prototype rapidly, use short notes, run one compact review |
-| Indie | 6 | Balanced | Keep useful docs, ADRs, stories, tests, and QA notes |
-| Mid-size | 12 | Structured | Use department reviews, readiness checks, risks, and milestones |
-| Full | 25+ | Thorough | Use director gates, specialist reviews, evidence, and release checks |
+| Dimension | Role Lenses | Execution Default | Review Weight | Expected Behavior |
+| --- | ---: | --- | --- | --- |
+| Solo | 3 | Single-agent lenses | Light | Prototype rapidly, use short notes, run one compact review |
+| Indie | 6 | Lenses, optional reviewer | Balanced | Keep useful docs, ADRs, stories, tests, and QA notes |
+| Mid-size | 12 | Optional multi-agent tracks | Structured | Use department reviews, readiness checks, risks, and milestones |
+| Full | 25+ | Multi-agent recommended when available | Thorough | Use director gates, specialist reviews, evidence, and release checks |
+
+## Hybrid Execution Model
+
+Role lenses are the default because they are portable and work in any Codex
+skill environment. Real subagents, parallel tasks, or worktrees are optional.
+The skill should propose them only when the current environment supports safe
+delegation and the work is large enough to split cleanly.
+
+Recommended defaults:
+
+- `solo`: one Codex agent using role lenses.
+- `indie`: one Codex agent, with an optional reviewer or QA subagent.
+- `mid-size`: two to four task tracks when design, technical, implementation,
+  QA, or release work can be separated.
+- `full`: multi-agent coordination recommended for high-risk launch,
+  multiplayer, security, live-ops, or broad specialist reviews.
 
 ## Main Skill References
 
@@ -47,6 +67,7 @@ with more roles, stronger gates, and more complete production evidence.
 | Interaction patterns | `skills/game-studio/references/interaction-patterns.md` | Making responses actionable and beginner-friendly |
 | Studio dimensions | `skills/game-studio/references/studio-dimensions.md` | Choosing process size |
 | Roles | `skills/game-studio/references/roles.md` | Routing work through role lenses |
+| Hybrid execution | `skills/game-studio/references/multi-agent-mode.md` | Deciding whether to use role lenses or real subagents/worktrees |
 | Workflows | `skills/game-studio/references/workflows.md` | Choosing a project workflow |
 | Workflow map | `skills/game-studio/references/workflow-map.md` | Translating upstream command coverage |
 | Artifacts | `skills/game-studio/references/artifacts.md` | Creating docs, stories, ADRs, QA evidence |
