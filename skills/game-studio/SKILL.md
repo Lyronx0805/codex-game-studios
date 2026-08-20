@@ -1,17 +1,17 @@
 ---
 name: game-studio
-description: Coordinate AI-assisted game development with selectable studio dimensions for design, architecture, implementation, QA, production, or release work.
+description: Coordinate AI-assisted game development with selectable studio dimensions, role lenses, and optional multi-agent execution for design, implementation, QA, production, or release work.
 metadata:
-  short-description: Coordinate game development work with scalable studio roles
+  short-description: Coordinate game development work with scalable roles and optional delegation
 ---
 
 # Game Studio
 
 Use this skill when the requested task involves structured AI-assisted game
 design, implementation, review, testing, or release work. It adapts a
-professional studio model to Codex:
-Codex remains one collaborator, but applies different role lenses and quality
-gates depending on project size.
+professional studio model to Codex. Codex can work as one coordinator applying
+role lenses, or use real subagents when the environment supports delegation and
+the selected dimension justifies the overhead.
 
 ## First Move
 
@@ -19,9 +19,10 @@ gates depending on project size.
    `design/`, `docs/`, `production/`, `src/`, `assets/`, `tests/`, and README
    files are the usual signals. If the workspace is empty, skip deep inspection
    and ask which game concept or workflow should be supported.
-2. Determine the studio dimension. If the user named one, use it. Otherwise,
-   recommend a dimension and ask only when the choice will materially change the
-   work. Read [references/studio-dimensions.md](references/studio-dimensions.md).
+2. Determine the studio dimension and execution model. If the user named one,
+   use it. Otherwise, recommend a dimension and ask only when the choice will
+   materially change the work. Read
+   [references/studio-dimensions.md](references/studio-dimensions.md).
 3. Route the request to the closest workflow in
    [references/workflows.md](references/workflows.md).
 4. Load only the references needed for the current request:
@@ -31,14 +32,17 @@ gates depending on project size.
    - upstream command coverage: [references/workflow-map.md](references/workflow-map.md)
    - expected docs/files: [references/artifacts.md](references/artifacts.md)
    - review checks: [references/quality-gates.md](references/quality-gates.md)
+   - optional subagent/worktree delegation:
+     [references/multi-agent-mode.md](references/multi-agent-mode.md)
 
 ## Codex-Native Operating Rules
 
 - Do not pretend Claude Code slash commands or Claude agent files are available.
   Translate command names into plain Codex workflow steps.
-- Treat studio roles as lenses for analysis and review. Use real Codex
-  subagents only when the current environment provides them and delegation is
-  useful.
+- Default to role-lens execution because it is portable across Codex skill
+  environments. Use real Codex subagents, parallel tasks, or worktrees only when
+  the current environment provides them, the work can be split cleanly, and the
+  expected benefit is greater than the coordination cost.
 - Keep the user in control. Present important trade-offs, recommend one option,
   and wait for the user's decision when the choice affects scope, design
   direction, technical architecture, or release risk.
