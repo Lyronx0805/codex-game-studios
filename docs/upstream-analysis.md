@@ -19,7 +19,8 @@ so this pack keeps the useful studio pattern and changes the mechanics:
 
 - use skills as workflow routers instead of slash commands;
 - use references for the large studio playbook;
-- use role lenses and optional subagents instead of Claude-only agent files;
+- use role lenses by default and optional Codex subagents, tasks, or worktrees
+  when the environment supports delegation;
 - use manual quality gates instead of Claude hooks;
 - scale the amount of process through studio dimensions.
 
