@@ -13,7 +13,7 @@ codex-game-studios
 Description:
 
 ```text
-Codex-created skill pack adapting the MIT-licensed Claude Code Game Studios workflow into scalable Codex studio dimensions.
+Codex-created skill package for vibe-coding game developers, adapting the MIT-licensed Claude Code Game Studios workflow into scalable Codex studio dimensions.
 ```
 
 Topics:
@@ -87,4 +87,3 @@ Reference label: `AI-GENERATED`
 
 This package was created by Codex as an AI-assisted adaptation. It is provided
 as-is under the MIT License and should be reviewed before production use.
-
