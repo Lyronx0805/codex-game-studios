@@ -1,6 +1,8 @@
 # Codex Game Studios
 
-Turn a Codex task into a structured game development studio.
+Codex Game Studios is a Codex skill package for vibe-coding game developers
+seeking studio-style structure for AI-assisted game design, implementation,
+testing, and release planning.
 
 **Created by Codex:** This skill pack was generated and organized by Codex as
 an AI-assisted adaptation. It is provided as-is under the MIT License. The
