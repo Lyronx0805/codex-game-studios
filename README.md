@@ -45,6 +45,35 @@ The main improvement over a one-size studio is selectable process depth.
 | Mid-size | 12 | Optional multi-agent tracks | Structured | Department reviews and quality gates |
 | Full | 25+ | Multi-agent recommended when available | Thorough | Full studio pipeline, director sign-offs, release gates |
 
+## Hybrid Mechanism
+
+The skill uses two execution layers.
+
+**Role-lens layer:** Codex remains a single active collaborator and examines
+the game through selected studio viewpoints. For example, the same response can
+apply designer, programmer, producer, QA, release, accessibility, or security
+lenses depending on the selected dimension and task risk. This is the default
+because it works in any Codex skill environment.
+
+**Multi-agent layer:** When the Codex environment provides subagents, parallel
+tasks, or isolated worktrees, larger work can be split into separate tracks.
+The coordinating Codex agent proposes the split, confirms it when the split was
+not already requested, assigns clear objectives and file boundaries, then
+synthesizes the results before presenting a final recommendation or change.
+
+The execution model scales with the studio dimension:
+
+- `solo`: one Codex agent using role lenses;
+- `indie`: one Codex agent by default, with an optional reviewer or QA subagent
+  for risky work;
+- `mid-size`: optional design, technical, implementation, QA, or release task
+  tracks;
+- `full`: multi-agent coordination recommended for launch, multiplayer,
+  security, live-ops, or broad specialist reviews when supported.
+
+Detailed delegation rules are defined in
+[skills/game-studio/references/multi-agent-mode.md](skills/game-studio/references/multi-agent-mode.md).
+
 ## Why This Skill Is Useful
 
 Many AI-assisted game-development workflows provide either minimal structure or
