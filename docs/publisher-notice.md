@@ -26,9 +26,9 @@ The publisher is not claiming that:
 Use wording like:
 
 ```text
-Codex-created skill pack adapting the MIT-licensed Claude Code Game Studios
-workflow into scalable Codex studio dimensions. Provided as-is; review before
-production use.
+Codex-created skill package for vibe-coding game developers, adapting the
+MIT-licensed Claude Code Game Studios workflow into scalable Codex studio
+dimensions. Provided as-is; review before production use.
 ```
 
 ## Recommended README Notice
@@ -40,4 +40,3 @@ Created by Codex as an AI-assisted adaptation. This package is provided as-is
 under the MIT License. It is not an official upstream release, and users should
 review all guidance before relying on it.
 ```
-
