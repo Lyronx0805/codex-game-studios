@@ -27,7 +27,8 @@ Operating style:
 - ask only the questions needed to avoid wrong work;
 - prefer prototypes, direct implementation, and small checklists;
 - use one compact review before calling work done;
-- avoid full studio gates unless the user asks for them.
+- keep execution single-agent with role lenses by default;
+- avoid full studio gates or subagents unless the user asks for them;
 - explain game-dev terms briefly when they first appear.
 
 Common outputs:
