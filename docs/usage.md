@@ -43,6 +43,32 @@ applies:
 - select `full` when launch, multiplayer, live operations, security, or release
   risk needs deeper review.
 
+## Choose An Execution Model
+
+The skill uses role lenses by default. One Codex agent can examine the game as a
+designer, programmer, producer, QA lead, release manager, or specialist without
+starting extra tasks.
+
+Multi-agent execution is optional. When the Codex environment supports
+subagents, parallel tasks, or worktrees, larger dimensions can split work into
+separate tracks:
+
+- `solo`: keep one Codex agent unless an independent review is explicitly
+  requested;
+- `indie`: add one reviewer or QA subagent when risk justifies it;
+- `mid-size`: split design, technical, implementation, QA, or release tracks
+  when work can be separated cleanly;
+- `full`: recommend multi-agent coordination for launch, multiplayer, security,
+  live-ops, or broad specialist reviews.
+
+Example requests:
+
+```text
+Use $game-studio-mid-size with multi-agent mode if supported to plan and review this combat system.
+Use $game-studio-full to run a launch readiness review with separate QA and release tracks if available.
+Use $game-studio-solo without subagents to prototype the inventory interaction quickly.
+```
+
 ## Example Requests
 
 Concept:
@@ -96,9 +122,10 @@ The skill usually:
 
 1. inspect the project briefly;
 2. choose or confirm a studio dimension;
-3. apply the relevant role lenses;
-4. create, edit, review, or implement the requested artifact;
-5. summarize what changed and what should happen next.
+3. choose role-lens or optional multi-agent execution;
+4. apply the relevant role lenses or task tracks;
+5. create, edit, review, or implement the requested artifact;
+6. summarize what changed and what should happen next.
 
 ## Human Review
 
