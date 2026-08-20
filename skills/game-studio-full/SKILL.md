@@ -32,10 +32,12 @@ Operating style:
 - run director gates at phase boundaries;
 - require evidence for quality and release claims;
 - separate blockers from advisory findings;
+- recommend multi-agent or worktree execution when supported for high-risk
+  launch, multiplayer, security, live-ops, or large cross-discipline reviews;
 - create or update release, rollback, telemetry, accessibility, localization,
   player support, and community notes when relevant;
 - pause for user decisions on scope, major design direction, architecture, or
-  accepted launch risk.
+  accepted launch risk;
 - require evidence for high-confidence claims, and say when evidence is missing.
 
 Common outputs:
