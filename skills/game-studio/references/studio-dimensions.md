@@ -5,12 +5,12 @@ Upscale only when project complexity, risk, or user preference justifies it.
 
 ## Dimension Table
 
-| Dimension | Role Lenses | Best For | Review Weight | Typical Output |
-| --- | ---: | --- | --- | --- |
-| Solo | 3 | first games, class projects, game jams, prototypes | light | short plan, checklist, direct implementation, basic tests |
-| Indie | 6 | small commercial or portfolio games | balanced | concept docs, system GDDs, ADRs, stories, QA notes |
-| Mid-size | 12 | multi-system games, team projects, serious production | structured | department reviews, sprint plans, risk register, quality gates |
-| Full | 25+ | ambitious games, multiplayer/live games, launch reviews | thorough | director sign-offs, specialist reviews, release readiness, evidence |
+| Dimension | Role Lenses | Execution Default | Best For | Review Weight | Typical Output |
+| --- | ---: | --- | --- | --- | --- |
+| Solo | 3 | single-agent lenses | first games, class projects, game jams, prototypes | light | short plan, checklist, direct implementation, basic tests |
+| Indie | 6 | lenses, optional review subagent | small commercial or portfolio games | balanced | concept docs, system GDDs, ADRs, stories, QA notes |
+| Mid-size | 12 | optional multi-agent tracks | multi-system games, team projects, serious production | structured | department reviews, sprint plans, risk register, quality gates |
+| Full | 25+ | multi-agent recommended when available | ambitious games, multiplayer/live games, launch reviews | thorough | director sign-offs, specialist reviews, release readiness, evidence |
 
 ## Solo Dimension
 
@@ -27,7 +27,9 @@ Default behavior:
 - ask few questions;
 - write lightweight notes instead of full documents unless requested;
 - prefer playable prototypes and tight feedback loops;
-- use one review pass before calling work complete.
+- use one review pass before calling work complete;
+- keep execution single-agent unless the user explicitly requests a separate
+  review agent.
 
 ## Indie Dimension
 
@@ -48,7 +50,9 @@ Default behavior:
 - create enough docs to keep the project coherent;
 - use ADRs for important technical choices;
 - break work into stories when implementation spans several files or systems;
-- run focused design/code/QA review gates.
+- run focused design/code/QA review gates;
+- use role lenses by default, and optionally propose one reviewer subagent when
+  risk, scope, or release prep makes independent review useful.
 
 ## Mid-Size Dimension
 
@@ -73,7 +77,10 @@ Default behavior:
 - maintain a visible project stage;
 - require design and architecture alignment before broad implementation;
 - use story readiness and story-done checks;
-- record risks, dependencies, and acceptance criteria.
+- record risks, dependencies, and acceptance criteria;
+- propose two to four task tracks when subagent or worktree tools are available
+  and the work separates cleanly across design, technical, implementation, QA,
+  or release concerns.
 
 ## Full Dimension
 
@@ -93,7 +100,10 @@ Default behavior:
 - require evidence for quality claims;
 - separate advisory findings from blockers;
 - create release, rollback, telemetry, accessibility, and support plans when
-  relevant.
+  relevant;
+- recommend multi-agent execution when supported for high-risk launch,
+  multiplayer, security, live-ops, or large cross-discipline reviews; fall back
+  to role lenses when delegation tools are unavailable.
 
 ## Review Modes
 
