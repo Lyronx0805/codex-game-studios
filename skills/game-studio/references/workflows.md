@@ -95,11 +95,13 @@ Use when the user asks to build or change game code.
 Steps:
 
 1. Load the relevant story, GDD, ADR, or source context.
-2. Identify the role lenses required by the dimension.
-3. Implement narrowly, following existing engine and code patterns.
-4. Add or update tests when the change is logic-heavy or shared.
-5. Run the closest available verification command.
-6. Summarize files changed, behavior changed, and verification.
+2. Identify the role lenses and execution model required by the dimension.
+3. For mid-size or full work, consider whether implementation, review, and QA
+   should be split into separate subagent or worktree tracks.
+4. Implement narrowly, following existing engine and code patterns.
+5. Add or update tests when the change is logic-heavy or shared.
+6. Run the closest available verification command.
+7. Summarize files changed, behavior changed, and verification.
 
 ## QA And Review
 
@@ -120,6 +122,8 @@ Review style:
 - separate "must fix" from "should consider";
 - tie findings to player impact or shipping risk;
 - name missing evidence instead of pretending confidence.
+- use an independent review subagent when supported and the selected dimension,
+  risk, or user request justifies the extra coordination.
 
 ## Release And Live Operations
 
