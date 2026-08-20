@@ -1,0 +1,4 @@
+display_name: Game Studio Indie
+short_description: Balanced structure for small game projects.
+default_prompt: Use $game-studio-indie to plan and build this game feature.
+
