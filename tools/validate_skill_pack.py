@@ -24,13 +24,39 @@ def fail(message: str) -> None:
     sys.exit(1)
 
 
+def top_level_keys(text: str) -> list[str]:
+    keys: list[str] = []
+    for line in text.splitlines():
+        if not line.strip() or line.lstrip().startswith("#") or line.startswith(" "):
+            continue
+        if ":" not in line:
+            continue
+        key, _value = line.split(":", 1)
+        keys.append(key.strip())
+    return keys
+
+
+def validate_unique_keys(keys: list[str], path: Path) -> None:
+    seen: set[str] = set()
+    duplicates: set[str] = set()
+    for key in keys:
+        if key in seen:
+            duplicates.add(key)
+        seen.add(key)
+    if duplicates:
+        fail(f"{path}: duplicate top-level keys: {', '.join(sorted(duplicates))}")
+
+
 def parse_simple_frontmatter(text: str, path: Path) -> dict[str, str]:
     match = re.match(r"^---\n(.*?)\n---", text, re.DOTALL)
     if not match:
         fail(f"{path}: missing or invalid YAML frontmatter")
 
+    frontmatter_text = match.group(1)
+    validate_unique_keys(top_level_keys(frontmatter_text), path)
+
     result: dict[str, str] = {}
-    for line in match.group(1).splitlines():
+    for line in frontmatter_text.splitlines():
         if not line.strip() or line.startswith("  "):
             continue
         if ":" not in line:
@@ -67,6 +93,7 @@ def validate_skill(name: str) -> None:
         fail(f"{name}: unfinished TODO placeholder")
 
     metadata_text = metadata.read_text(encoding="utf-8")
+    validate_unique_keys(top_level_keys(metadata_text), metadata)
     for required in ("display_name:", "short_description:", "default_prompt:"):
         if required not in metadata_text:
             fail(f"{name}: metadata missing {required}")
