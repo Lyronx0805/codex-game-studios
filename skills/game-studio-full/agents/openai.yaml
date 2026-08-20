@@ -1,0 +1,4 @@
+display_name: Game Studio Full
+short_description: Thorough studio workflow for high-risk or launch-bound games.
+default_prompt: Use $game-studio-full to review and coordinate this game.
+
