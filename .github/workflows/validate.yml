@@ -1,0 +1,16 @@
+name: Validate Skill Pack
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate Codex skills
+        run: python3 tools/validate_skill_pack.py
+
