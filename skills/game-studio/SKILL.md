@@ -1,15 +1,15 @@
 ---
 name: game-studio
-description: Run Codex as a game development studio for game design, architecture, implementation, QA, production, or release work; choose a studio dimension from solo, indie, mid-size, or full.
+description: Coordinate AI-assisted game development with selectable studio dimensions for design, architecture, implementation, QA, production, or release work.
 metadata:
   short-description: Coordinate game development work with scalable studio roles
 ---
 
 # Game Studio
 
-Use this skill when the requested task involves structured help building,
-planning, reviewing, testing, or shipping a game. It adapts a professional
-studio model to Codex:
+Use this skill when the requested task involves structured AI-assisted game
+design, implementation, review, testing, or release work. It adapts a
+professional studio model to Codex:
 Codex remains one collaborator, but applies different role lenses and quality
 gates depending on project size.
 
